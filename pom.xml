@@ -31,6 +31,8 @@
   <groupId>org.goots.maven</groupId>
   <artifactId>module-reader</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <url>https://github.com/rnc/module-reader</url>
+  <inceptionYear>2018</inceptionYear>
 
   <licenses>
     <license>
@@ -47,6 +49,13 @@
     </developer>
   </developers>
 
+  <scm>
+    <connection>scm:git:https://github.com/rnc/module-reader.git</connection>
+    <developerConnection>scm:git:git@github.com:rnc/module-reader.git</developerConnection>
+    <url>https://github.com/rnc/module-reader</url>
+    <tag>HEAD</tag>
+  </scm>
+
   <properties>
     <projectOwner>Red Hat, Inc.</projectOwner>
 
@@ -59,7 +68,6 @@
     <sisuInjectVersion>0.3.0.M1</sisuInjectVersion>
     <guiceVersion>3.2.3</guiceVersion>
     <plexusUtilsVersion>3.0.20</plexusUtilsVersion>
-
   </properties>
 
   <dependencyManagement>
@@ -272,6 +280,18 @@
 
 
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.mycila</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <configuration>
+            <header>APACHE-2-SIMPLIFIED-COPYRIGHT.txt</header>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
     <plugins>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
