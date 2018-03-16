@@ -288,69 +288,6 @@
         </executions>
       </plugin>
 
-      <!-- <plugin> -->
-      <!--   <groupId>org.codehaus.plexus</groupId> -->
-      <!--   <artifactId>plexus-component-metadata</artifactId> -->
-      <!--   <version>1.7.1</version> -->
-      <!--   <executions> -->
-      <!--     <execution> -->
-      <!--       <id>process-classes</id> -->
-      <!--       <goals> -->
-      <!--         <goal>generate-metadata</goal> -->
-      <!--       </goals> -->
-      <!--     </execution> -->
-      <!--     <execution> -->
-      <!--       <id>process-test-classes</id> -->
-      <!--       <goals> -->
-      <!--         <goal>generate-test-metadata</goal> -->
-      <!--       </goals> -->
-      <!--     </execution> -->
-      <!--     <execution> -->
-      <!--       <id>merge-descriptors</id> -->
-      <!--       <phase>process-classes</phase> -->
-      <!--       <goals> -->
-      <!--         <goal>merge-metadata</goal> -->
-      <!--       </goals> -->
-      <!--     </execution> -->
-      <!--   </executions> -->
-      <!--   <!-\- <configuration> -\-> -->
-      <!--   <!-\-   <!-\\- <output>${plexus.outputFile}</output> -\\-> -\-> -->
-      <!--   <!-\-   <descriptors> -\-> -->
-      <!--   <!-\-     <!-\\- <descriptor>${plexus.outputFile}</descriptor> -\\-> -\-> -->
-      <!--   <!-\-     <!-\\-./aether-transport-wagon-1.1.0.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/aether-transport-wagon/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./maven-aether-provider-3.1.0.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/maven-aether-provider/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./maven-artifact-manager-2.2.1.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/maven-artifact-manager/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./maven-core-3.1.1.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/maven-core/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./maven-model-builder-3.1.0.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/maven-model-builder/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./maven-plugin-registry-2.2.1.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/maven-plugin-registry/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./maven-profile-2.2.1.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/maven-profile/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./maven-project-2.2.1.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/maven-project/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./maven-settings-builder-3.1.1.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/maven-settings-builder/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./org.eclipse.sisu.plexus-0.0.0.M2a.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/sisu-plexus/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./plexus-cipher-1.4.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/plexus-cipher/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./plexus-interactivity-api-1.0-alpha-6.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/plexus-interactivity-api/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./plexus-sec-dispatcher-1.3.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/plexus-sec-dispatcher/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./wagon-ssh-1.0.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/wagon-ssh/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-     <!-\\-./wagon-ssh-common-1.0.jar.d/META-INF/plexus/components.xml-\\-> -\-> -->
-      <!--   <!-\-     <descriptor>${project.build.directory}/extracted-sources/wagon-ssh-common/META-INF/plexus/components.xml</descriptor> -\-> -->
-      <!--   <!-\-   </descriptors> -\-> -->
-      <!--   <!-\- </configuration> -\-> -->
-      <!-- </plugin> -->
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -358,13 +295,9 @@
           <archive>
             <index>true</index>
             <manifest>
-              <!-- <addClasspath>true</addClasspath> -->
               <mainClass>org.goots.maven.ModuleReader</mainClass>
             </manifest>
           </archive>
-          <!-- <descriptorRefs> -->
-          <!--   <descriptorRef>jar-with-dependencies</descriptorRef> -->
-          <!-- </descriptorRefs> -->
           <descriptors>
             <descriptor>src/main/assembly/bin.xml</descriptor>
           </descriptors>

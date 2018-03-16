@@ -30,30 +30,7 @@
       <outputDirectory>/</outputDirectory>
       <useProjectArtifact>true</useProjectArtifact>
       <unpack>true</unpack>
-      <!-- <scope>runtime</scope> -->
-      <!-- <unpackOptions> -->
-      <!--   <excludes> -->
-      <!--     <exclude>**/javax.inject.Named</exclude> -->
-      <!--   </excludes> -->
-      <!-- </unpackOptions> -->
-      <!-- <excludes> -->
-      <!-- </excludes> -->
     </dependencySet>
-    <!-- <dependencySet> -->
-    <!--   <outputDirectory>/</outputDirectory> -->
-    <!--   <useProjectArtifact>true</useProjectArtifact> -->
-    <!--   <unpack>true</unpack> -->
-    <!--   <!-\- <useTransitiveFiltering>true</useTransitiveFiltering> -\-> -->
-    <!--   <!-\- <scope>runtime</scope> -\-> -->
-    <!--   <unpackOptions> -->
-    <!--     <includes> -->
-    <!--       <include>**/javax.inject.Named</include> -->
-    <!--     </includes> -->
-    <!--   </unpackOptions> -->
-    <!--   <includes> -->
-    <!--     <include>org.apache.maven:maven-core</include> -->
-    <!--   </includes> -->
-    <!-- </dependencySet> -->
   </dependencySets>
   <containerDescriptorHandlers>
     <containerDescriptorHandler>
