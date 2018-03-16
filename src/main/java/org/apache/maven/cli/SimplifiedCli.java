@@ -161,30 +161,35 @@ public class SimplifiedCli
      *
      * @return the GIT sha of this codebase.
      */
-    public String getScmRevision() {
+    private String getScmRevision()
+    {
         String scmRevision = "unknown";
 
-        try {
-            Enumeration<URL> resources = ModuleReader.class.getClassLoader().getResources( "META-INF/MANIFEST.MF");
+        try
+        {
+            Enumeration<URL> resources = ModuleReader.class.getClassLoader().getResources( "META-INF/MANIFEST.MF" );
 
-            while (resources.hasMoreElements()) {
+            while ( resources.hasMoreElements() )
+            {
                 URL jarUrl = resources.nextElement();
 
-                if (jarUrl.getFile().contains("module-reader")) {
-                    Manifest manifest = new Manifest( jarUrl.openStream());
-                    String manifestValue = manifest.getMainAttributes().getValue("Scm-Revision");
+                if ( jarUrl.getFile().contains( "module-reader" ) )
+                {
+                    Manifest manifest = new Manifest( jarUrl.openStream() );
+                    String manifestValue = manifest.getMainAttributes().getValue( "Scm-Revision" );
 
-                    if (manifestValue != null && !manifestValue.isEmpty()) {
+                    if ( manifestValue != null && !manifestValue.isEmpty() )
+                    {
                         scmRevision = manifestValue;
                     }
-
                     break;
                 }
             }
-        } catch (IOException e) {
-            slf4jLogger.error("Unexpected exception processing jar file", e);
         }
-
+        catch ( IOException e )
+        {
+            slf4jLogger.error( "Unexpected exception processing jar file", e );
+        }
         return scmRevision;
     }
 }
