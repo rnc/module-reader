@@ -11,16 +11,21 @@ import org.apache.maven.execution.ProjectDependencyGraph;
 import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.PlexusContainer;
 import org.eclipse.aether.RepositorySystemSession;
+import org.goots.maven.ModuleReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.util.Collection;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.jar.Manifest;
 
-import static org.apache.maven.cli.MavenCli.ExitException;
 import static org.apache.maven.cli.MavenCli.CliRequest;
+import static org.apache.maven.cli.MavenCli.ExitException;
 
 /**
  * This class is in the same package as {@link MavenCli} in order to access the
@@ -40,6 +45,8 @@ public class SimplifiedCli
     public int run() throws Exception
     {
         final MavenCli mavenCli = new MavenCli( );
+
+        slf4jLogger.debug ("Module analyser {} with SHA {} ", ModuleReader.class.getPackage().getImplementationVersion(), getScmRevision() );
 
         PlexusContainer localContainer = null;
         try
@@ -131,5 +138,37 @@ public class SimplifiedCli
                throw new Exception( "Unable to invoke target", e );                
             }
         }
+    }
+
+    /**
+     * Retrieves the SHA this was built with.
+     *
+     * @return the GIT sha of this codebase.
+     */
+    public String getScmRevision() {
+        String scmRevision = "unknown";
+
+        try {
+            Enumeration<URL> resources = ModuleReader.class.getClassLoader().getResources( "META-INF/MANIFEST.MF");
+
+            while (resources.hasMoreElements()) {
+                URL jarUrl = resources.nextElement();
+
+                if (jarUrl.getFile().contains("module-reader")) {
+                    Manifest manifest = new Manifest( jarUrl.openStream());
+                    String manifestValue = manifest.getMainAttributes().getValue("Scm-Revision");
+
+                    if (manifestValue != null && !manifestValue.isEmpty()) {
+                        scmRevision = manifestValue;
+                    }
+
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            slf4jLogger.error("Unexpected exception processing jar file", e);
+        }
+
+        return scmRevision;
     }
 }
