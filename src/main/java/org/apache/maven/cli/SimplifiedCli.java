@@ -125,7 +125,7 @@ public class SimplifiedCli
         slf4jLogger.debug( "ProjectDependencyGraph is " + projectDependencyGraph );
 
         projectDependencyGraph.getSortedProjects().forEach(
-                        p -> slf4jLogger.info ("{} : {} : {} ", p.getGroupId() , p.getArtifactId(), p.getVersion())
+                        p -> slf4jLogger.info ("{}:{}:{}", p.getGroupId() , p.getArtifactId(), p.getVersion())
         );
 
         return 1;
